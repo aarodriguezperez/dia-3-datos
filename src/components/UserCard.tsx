@@ -23,8 +23,7 @@ export function UserCard({ user, onEdit, onDelete }: UserCardProps) {
     <Card>
       <CardContent>
         <Stack direction="column" spacing={2} alignItems="center">
-          <Avatar sx={{ border: '1px solid',
-                borderRadius: 2, width: 75, height: 75 }}>
+          <Avatar sx={{ border: '1px solid', bgcolor:'white', color:'dodgerblue', width: 75, height: 75 }}>
             {initials(user.name)}
           </Avatar>
 
@@ -36,7 +35,7 @@ export function UserCard({ user, onEdit, onDelete }: UserCardProps) {
             <Typography variant="body2" color="dodgerblue">{user.email}</Typography>
           </Stack>
 
-          <Stack direction="row" spacing={1}>
+          <Stack direction="row" spacing={4}>
             <IconButton
               aria-label={`Editar ${user.name}`}
               onClick={() => onEdit(user)}
