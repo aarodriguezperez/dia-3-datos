@@ -28,7 +28,7 @@ export function UserCard({ user, onEdit, onDelete }: UserCardProps) {
           </Avatar>
 
           <Stack spacing={0.25} sx={{ flexGrow: 1 }}>
-            <Typography variant="subtitle1" sx={{ fontSize: '25px' }}> {user.name}</Typography>
+            <Typography variant="subtitle1" sx={{ fontSize: '21px', color:'dodgerblue' }} > {user.name}</Typography>
             <Typography variant="body2" color="text.secondary">
               @{user.username}
             </Typography>
