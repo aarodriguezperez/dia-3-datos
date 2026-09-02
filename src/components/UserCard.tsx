@@ -22,23 +22,29 @@ export function UserCard({ user, onEdit, onDelete }: UserCardProps) {
   return (
     <Card>
       <CardContent>
-        <Stack direction="row" spacing={2} alignItems="center">
-          <Avatar sx={{ bgcolor: 'primary.main', width: 48, height: 48 }}>
+        <Stack direction="column" spacing={2} alignItems="center">
+          <Avatar sx={{ border: '1px solid',
+                borderRadius: 2, width: 75, height: 75 }}>
             {initials(user.name)}
           </Avatar>
 
           <Stack spacing={0.25} sx={{ flexGrow: 1 }}>
-            <Typography variant="subtitle1">{user.name}</Typography>
+            <Typography variant="subtitle1" sx={{ fontSize: '25px' }}> {user.name}</Typography>
             <Typography variant="body2" color="text.secondary">
               @{user.username}
             </Typography>
-            <Typography variant="body2">{user.email}</Typography>
+            <Typography variant="body2" color="dodgerblue">{user.email}</Typography>
           </Stack>
 
-          <Stack direction="row">
+          <Stack direction="row" spacing={1}>
             <IconButton
               aria-label={`Editar ${user.name}`}
               onClick={() => onEdit(user)}
+              sx={{
+                border: '1px solid',
+                borderColor: 'grey',
+                borderRadius: 2,
+              }}
             >
               <EditIcon />
             </IconButton>
@@ -46,6 +52,11 @@ export function UserCard({ user, onEdit, onDelete }: UserCardProps) {
               aria-label={`Eliminar ${user.name}`}
               color="error"
               onClick={() => onDelete(user)}
+              sx={{
+                border: '1px solid',
+                borderColor: 'red',
+                borderRadius: 2,         
+              }}
             >
               <DeleteIcon />
             </IconButton>

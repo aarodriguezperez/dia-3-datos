@@ -58,7 +58,7 @@ export function UsersPage() {
           </Button>
         </Stack>
 
-        <AsyncState loading={loading} error={error} empty={!users.length}>
+        {/* <AsyncState loading={loading} error={error} empty={!users.length}>
           <Stack spacing={2}>
             {users.map((user) => (
               <UserCard
@@ -69,7 +69,30 @@ export function UsersPage() {
               />
             ))}
           </Stack>
-        </AsyncState>
+        </AsyncState> */}
+
+      <AsyncState loading={loading} error={error} empty={!users.length}>
+
+      <Stack
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: 2,
+        }}
+      >
+
+        {users.map((user) => (
+          <UserCard
+            key={user.id}
+            user={user}
+            onEdit={handleStartEdit}
+            onDelete={handleDelete}
+          />
+        ))}
+
+      </Stack>
+
+      </AsyncState>
       </Stack>
 
       <UserFormDialog
